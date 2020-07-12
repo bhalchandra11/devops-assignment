@@ -2,6 +2,6 @@ version: "3.2"
 services:
   webapp:
     build: .
-    image: apache1  
+    image: apache  
     ports:
       - "82:80"
