@@ -32,10 +32,10 @@ pipeline {
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
-    stage('cleanup') {
-        // Recursively delete all files and folders in the workspace
-        // using the built-in pipeline command
-        deleteDir()
+    post { 
+        always { 
+            cleanWs()
+        }
     }
   }
 }
